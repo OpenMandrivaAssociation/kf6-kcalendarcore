@@ -1,6 +1,6 @@
 %define libname %mklibname KF6CalendarCore
 %define devname %mklibname KF6CalendarCore -d
-%define git 20230918
+%define git 20230924
 
 Name: kf6-kcalendarcore
 Version: 5.240.0

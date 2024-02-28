@@ -2,10 +2,10 @@
 
 %define libname %mklibname KF6CalendarCore
 %define devname %mklibname KF6CalendarCore -d
-%define git 20240217
+#define git 20240217
 
 Name: kf6-kcalendarcore
-Version: 5.250.0
+Version: 6.0.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kcalendarcore/-/archive/master/kcalendarcore-master.tar.bz2#/kcalendarcore-%{git}.tar.bz2

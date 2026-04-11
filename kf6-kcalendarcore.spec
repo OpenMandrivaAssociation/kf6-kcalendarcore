@@ -20,6 +20,8 @@ Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: cmake(ECM)
 BuildRequires: python
+BuildRequires: cmake(Qt6Core)
+BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)

@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kcalendarcore
-Version: 6.25.0
+Version: 6.27.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kcalendarcore/-/archive/master/kcalendarcore-master.tar.bz2#/kcalendarcore-%{git}.tar.bz2
@@ -37,6 +37,8 @@ BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: pkgconfig(libical)
+BuildRequires: cmake(PySide6)
+BuildRequires: cmake(Shiboken6)
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -59,6 +61,14 @@ Requires: %{libname} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 Library for Interfacing with Calendars
+
+%package -n python-kcalendarcore
+Summary: Python bindings for kcalendarcore
+Group: System/Libraries
+Requires: %{libname} = %{EVRD}
+
+%description -n python-kcalendarcore
+Python bindings for kcalendarcore
 
 %prep
 %autosetup -p1 -n kcalendarcore-%{?git:master}%{!?git:%{version}}
@@ -85,3 +95,8 @@ Library for Interfacing with Calendars
 %files -n %{libname}
 %{_libdir}/libKF6CalendarCore.so*
 %{_qtdir}/qml/org/kde/calendarcore
+
+%files -n python-kcalendarcore
+%{_includedir}/PySide6/KCalendarCore
+%{python_sitearch}/KCalendarCore.*.so
+%{_datadir}/PySide6/typesystems/typesystem_kcalendarcore.xml

@@ -22,7 +22,6 @@ BuildRequires: cmake(ECM)
 BuildRequires: python
 BuildRequires: python%{pyver}dist(build)
 BuildRequires: pkgconfig(python3)
-BuildRequires: devel(libpython3.14)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6DBusTools)

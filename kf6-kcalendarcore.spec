@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kcalendarcore
-Version: 6.28.0
+Version: 6.29.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kcalendarcore/-/archive/master/kcalendarcore-master.tar.bz2#/kcalendarcore-%{git}.tar.bz2
@@ -41,6 +41,8 @@ BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: pkgconfig(libical)
 BuildRequires: cmake(PySide6)
 BuildRequires: cmake(Shiboken6)
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -71,20 +73,6 @@ Requires: %{libname} = %{EVRD}
 
 %description -n python-kcalendarcore
 Python bindings for kcalendarcore
-
-%prep
-%autosetup -p1 -n kcalendarcore-6.28.0
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files
 %{_datadir}/qlogging-categories6/kcalendarcore.*

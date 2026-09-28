@@ -6,8 +6,8 @@
 #define git 20240217
 
 Name: kf6-kcalendarcore
-Version: 6.29.0
-Release: %{?git:0.%{git}.}2
+Version: 6.30.0
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kcalendarcore/-/archive/master/kcalendarcore-master.tar.bz2#/kcalendarcore-%{git}.tar.bz2
 %else
@@ -76,6 +76,7 @@ Python bindings for kcalendarcore
 
 %files
 %{_datadir}/qlogging-categories6/kcalendarcore.*
+%{_datadir}/locale/*/LC_MESSAGES/kcalendarcore6_qt.qm
 
 %files -n %{devname}
 %{_includedir}/KF6/KCalendarCore
